@@ -24,6 +24,11 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     /**
      * @var float
      */
+    protected $discSum;
+    
+    /**
+     * @var float
+     */
     protected $price;
 
     /**
@@ -96,6 +101,22 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
         'credit',
         'credit_payment',
     ];
+
+    /**
+     * @return float
+     */
+    public function getDiscSum()
+    {
+        return $this->discSum;
+    }
+
+    /**
+     * @param float $discSum
+     */
+    public function setDiscSum($discSum)
+    {
+        $this->discSum = $discSum;
+    }
 
     /**
      * @return float
