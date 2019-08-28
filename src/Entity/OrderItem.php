@@ -9,12 +9,12 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Entity;
+namespace Brandshopru\ModulposApiClient\Entity;
 
-use Bigperson\ModulposApiClient\Contracts\ModulposOrderItemInterface;
-use Bigperson\ModulposApiClient\Exceptions\PaymentMethodNotAllowed;
-use Bigperson\ModulposApiClient\Exceptions\PaymentObjectNotAllowed;
-use Bigperson\ModulposApiClient\Exceptions\VatTagNotAllowed;
+use Brandshopru\ModulposApiClient\Contracts\ModulposOrderItemInterface;
+use Brandshopru\ModulposApiClient\Exceptions\PaymentMethodNotAllowed;
+use Brandshopru\ModulposApiClient\Exceptions\PaymentObjectNotAllowed;
+use Brandshopru\ModulposApiClient\Exceptions\VatTagNotAllowed;
 
 /**
  * Class OrderItem.
@@ -161,7 +161,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     /**
      * @param int $vatTag
      *
-     * @throws \Bigperson\ModulposApiClient\Exceptions\VatTagNotAllowed
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\VatTagNotAllowed
      */
     public function setVatTag($vatTag)
     {

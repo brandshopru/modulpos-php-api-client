@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient;
+namespace Brandshopru\ModulposApiClient;
 
 use GuzzleHttp\ClientInterface;
 

@@ -9,11 +9,11 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient;
+namespace Brandshopru\ModulposApiClient;
 
-use Bigperson\ModulposApiClient\Contracts\ClientInterface;
-use Bigperson\ModulposApiClient\Contracts\ModulposCashierInterface;
-use Bigperson\ModulposApiClient\Contracts\ModulposOrderInterface;
+use Brandshopru\ModulposApiClient\Contracts\ClientInterface;
+use Brandshopru\ModulposApiClient\Contracts\ModulposCashierInterface;
+use Brandshopru\ModulposApiClient\Contracts\ModulposOrderInterface;
 
 /**
  * Class Client.
@@ -54,7 +54,7 @@ class Client implements ClientInterface
      * @param bool                        $testMode
      * @param \GuzzleHttp\ClientInterface $client
      *
-     * @see \Bigperson\ModulposApiClient\Associate::init()
+     * @see \Brandshopru\ModulposApiClient\Associate::init()
      */
     public function __construct(string $login, string $password, bool $testMode = false, \GuzzleHttp\ClientInterface $client = null)
     {

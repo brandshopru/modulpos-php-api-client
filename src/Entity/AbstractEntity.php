@@ -9,9 +9,9 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Entity;
+namespace Brandshopru\ModulposApiClient\Entity;
 
-use Bigperson\ModulposApiClient\Exceptions\MethodNotFound;
+use Brandshopru\ModulposApiClient\Exceptions\MethodNotFound;
 
 /**
  * Class AbstractEntity.
@@ -21,7 +21,7 @@ abstract class AbstractEntity
     /**
      * @param array $params
      *
-     * @throws \Bigperson\ModulposApiClient\Exceptions\MethodNotFound
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\MethodNotFound
      *
      * @return static
      */

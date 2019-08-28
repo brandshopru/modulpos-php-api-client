@@ -9,12 +9,12 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient;
+namespace Brandshopru\ModulposApiClient;
 
-use Bigperson\ModulposApiClient\Contracts\ModulposCashierInterface;
-use Bigperson\ModulposApiClient\Contracts\ModulposOrderInterface;
-use Bigperson\ModulposApiClient\Exceptions\ItemsNotFound;
-use Bigperson\ModulposApiClient\Exceptions\RequiredParameterNotFound;
+use Brandshopru\ModulposApiClient\Contracts\ModulposCashierInterface;
+use Brandshopru\ModulposApiClient\Contracts\ModulposOrderInterface;
+use Brandshopru\ModulposApiClient\Exceptions\ItemsNotFound;
+use Brandshopru\ModulposApiClient\Exceptions\RequiredParameterNotFound;
 
 /**
  * Class CheckDataFactory.
@@ -57,7 +57,7 @@ class CheckDataFactory
         }
 
         foreach ($order->getItems() as $item) {
-            /** @var \Bigperson\ModulposApiClient\Contracts\ModulposOrderItemInterface $item */
+            /** @var \Brandshopru\ModulposApiClient\Contracts\ModulposOrderItemInterface $item */
             $itemData = [
                 'name'            => $item->getName(),
                 'price'           => $item->getPrice(),
@@ -71,7 +71,7 @@ class CheckDataFactory
         }
 
         foreach ($order->getPaymentItems() as $paymentItem) {
-            /** @var \Bigperson\ModulposApiClient\Contracts\ModulposPaymentItemInterface $paymentItem */
+            /** @var \Brandshopru\ModulposApiClient\Contracts\ModulposPaymentItemInterface $paymentItem */
             $paymentItemData = [
                 'paymentType' => $paymentItem->getType(),
                 'sum'         => $paymentItem->getSum(),
@@ -84,10 +84,10 @@ class CheckDataFactory
     }
 
     /**
-     * @param \Bigperson\ModulposApiClient\Contracts\ModulposOrderInterface $order
+     * @param \Brandshopru\ModulposApiClient\Contracts\ModulposOrderInterface $order
      *
-     * @throws \Bigperson\ModulposApiClient\Exceptions\ItemsNotFound
-     * @throws \Bigperson\ModulposApiClient\Exceptions\RequiredParameterNotFound
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\ItemsNotFound
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\RequiredParameterNotFound
      */
     private static function validate(ModulposOrderInterface $order)
     {
@@ -118,7 +118,7 @@ class CheckDataFactory
         }
 
         foreach ($items as $item) {
-            /** @var \Bigperson\ModulposApiClient\Contracts\ModulposOrderItemInterface $item */
+            /** @var \Brandshopru\ModulposApiClient\Contracts\ModulposOrderItemInterface $item */
             if (!$item->getPrice()) {
                 throw new RequiredParameterNotFound('price in orderItem is required');
             }
@@ -140,7 +140,7 @@ class CheckDataFactory
         }
 
         foreach ($paymentItems as $paymentItem) {
-            /** @var \Bigperson\ModulposApiClient\Contracts\ModulposPaymentItemInterface $paymentItem */
+            /** @var \Brandshopru\ModulposApiClient\Contracts\ModulposPaymentItemInterface $paymentItem */
             if (!$paymentItem->getType()) {
                 throw new RequiredParameterNotFound('type in paymentItem is required');
             }

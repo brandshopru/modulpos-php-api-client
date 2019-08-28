@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Contracts;
+namespace Brandshopru\ModulposApiClient\Contracts;
 
 /**
  * Interface ModulposPaymentItemInterface.

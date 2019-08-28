@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Exceptions;
+namespace Brandshopru\ModulposApiClient\Exceptions;
 
 /**
  * Class PaymentMethodNotAllowed.

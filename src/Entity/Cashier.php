@@ -9,9 +9,9 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Entity;
+namespace Brandshopru\ModulposApiClient\Entity;
 
-use Bigperson\ModulposApiClient\Contracts\ModulposCashierInterface;
+use Brandshopru\ModulposApiClient\Contracts\ModulposCashierInterface;
 
 /**
  * Class Order.

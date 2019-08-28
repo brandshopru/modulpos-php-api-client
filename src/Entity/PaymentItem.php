@@ -9,10 +9,10 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Entity;
+namespace Brandshopru\ModulposApiClient\Entity;
 
-use Bigperson\ModulposApiClient\Contracts\ModulposPaymentItemInterface;
-use Bigperson\ModulposApiClient\Exceptions\TypeOperationsNotAllowed;
+use Brandshopru\ModulposApiClient\Contracts\ModulposPaymentItemInterface;
+use Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed;
 
 /**
  * Class PaymentItem.
@@ -48,7 +48,7 @@ class PaymentItem extends AbstractEntity implements ModulposPaymentItemInterface
     /**
      * @param string $type
      *
-     * @throws \Bigperson\ModulposApiClient\Exceptions\TypeOperationsNotAllowed
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed
      */
     public function setType($type)
     {

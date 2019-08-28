@@ -9,10 +9,10 @@
  */
 declare(strict_types=1);
 
-namespace Bigperson\ModulposApiClient\Entity;
+namespace Brandshopru\ModulposApiClient\Entity;
 
-use Bigperson\ModulposApiClient\Contracts\ModulposOrderInterface;
-use Bigperson\ModulposApiClient\Exceptions\TypeOperationsNotAllowed;
+use Brandshopru\ModulposApiClient\Contracts\ModulposOrderInterface;
+use Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed;
 
 /**
  * Class Order.
@@ -118,7 +118,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     /**
      * @param string $typeOperation
      *
-     * @throws \Bigperson\ModulposApiClient\Exceptions\TypeOperationsNotAllowed
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed
      */
     public function setTypeOperation($typeOperation)
     {
