@@ -66,7 +66,7 @@ class CheckDataFactory
                 'paymentObject'   => $item->getPaymentObject(),
                 'paymentMethod'   => $item->getPaymentMethod(),
             ];
-            if ($item->getDisc() !== false) $itemData['discSum'] = $item->getDisc();
+            if ($item->getDiscSum() !== false) $itemData['discSum'] = $item->getDiscSum();
             $checkData['inventPositions'][] = $itemData;
         }
 
