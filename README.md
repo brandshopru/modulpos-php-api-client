@@ -138,10 +138,5 @@ $result = $client->getStatusDocumentById($documentId);
 $client = new \Brandshopru\ModulposApiClient\Client($login, $password, $testMode);
 $result = $client->getStatusFiscalService();
 ```
-
-## Развитие пакета
-С целью активного развития пакета, рекомендуем создавать пулл-реквесты, а не только баг-репорты ([issues](https://github.com/Brandshopru/modulpos-php-api-client/issues)). 
-По любым проблемам рекомендуем открывать Баг-репорты с подробным описанием проблемы и последовательностью действия для воспроизведения бага.
-
 ## Лицензия
 [MIT](https://raw.githubusercontent.com/Brandshopru/modulpos-php-api-client/master/LICENSE)
