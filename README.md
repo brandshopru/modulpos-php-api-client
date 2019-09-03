@@ -1,9 +1,9 @@
 # PHP клиент для API автоматической фискализации чеков интернет-магазинов Модуль.Кассы
-[![](https://img.shields.io/packagist/l/bigperson/modulpos-php-api-client.svg?style=flat-square)](https://github.com/bigperson/modulpos-php-api-client/blob/master/LICENSE) 
-[![](https://img.shields.io/packagist/dt/bigperson/modulpos-php-api-client.svg?style=flat-square)](https://packagist.org/packages/bigperson/modulpos-php-api-client)
-[![](https://img.shields.io/packagist/v/bigperson/modulpos-php-api-client.svg?style=flat-square)](https://packagist.org/packages/bigperson/modulpos-php-api-client)
-[![](https://img.shields.io/travis/bigperson/modulpos-php-api-client.svg?style=flat-square)](https://travis-ci.org/bigperson/modulpos-php-api-client)
-[![](https://img.shields.io/codecov/c/github/bigperson/modulpos-php-api-client.svg?style=flat-square)](https://codecov.io/gh/bigperson/modulpos-php-api-client)
+[![](https://img.shields.io/packagist/l/Brandshopru/modulpos-php-api-client.svg?style=flat-square)](https://github.com/Brandshopru/modulpos-php-api-client/blob/master/LICENSE) 
+[![](https://img.shields.io/packagist/dt/Brandshopru/modulpos-php-api-client.svg?style=flat-square)](https://packagist.org/packages/Brandshopru/modulpos-php-api-client)
+[![](https://img.shields.io/packagist/v/Brandshopru/modulpos-php-api-client.svg?style=flat-square)](https://packagist.org/packages/Brandshopru/modulpos-php-api-client)
+[![](https://img.shields.io/travis/Brandshopru/modulpos-php-api-client.svg?style=flat-square)](https://travis-ci.org/Brandshopru/modulpos-php-api-client)
+[![](https://img.shields.io/codecov/c/github/Brandshopru/modulpos-php-api-client.svg?style=flat-square)](https://codecov.io/gh/Brandshopru/modulpos-php-api-client)
 [![StyleCI](https://styleci.io/repos/98306851/shield?branch=master)](https://styleci.io/repos/98306851)
 
 Пакет предоставляет удобный интерфейс для общения с API Модуль.Кассы для отправки данных чеков в сервис фискализации. 
@@ -22,12 +22,7 @@
 Вы можете установить данный пакет с помощью сomposer:
 
 ```
-composer require bigperson/modulpos-php-api-client
-```
-
-Для PHP 5.4-7.0 можеете использовать предыдущую версию
-```
-composer require bigperson/modulpos-php-api-client 1.0
+composer require brandshopru/modulpos-php-api-client
 ```
 
 ## Использование
@@ -41,7 +36,7 @@ $login = 'test@test.ru'; // Логин от аккаунта Модуль.Кас
 $password = 'password'; // Пароль от аккаунта Модуль.Кассы
 $retailPointUuid = 'uuid'; // Идентификатор розничной точки
 $testMode = true; // Тестовый режим
-$associate = new \Bigperson\ModulposApiClient\Associate($login, $password, $retailPointUuid, $testMode);
+$associate = new \Brandshopru\ModulposApiClient\Associate($login, $password, $retailPointUuid, $testMode);
 $result = $associate->init();
 ```
 
@@ -50,10 +45,10 @@ $result = $associate->init();
 ### Отправка данных чека на сервер фискализации (создание документа)
 Для начала необходимо сформировать данные самого чека. Для этого достаточно для ваших моделей инплементировать интерфейсы ModulposOrderInterface для заказа, ModulposOrderItemInterface для товара в заказе, ModulposPaymentItemInterface для способа оплаты. Также вы можете использовать entity из пакета, или отнаследовать от них собственные классы переопределив методы на собственные.
 ```php
-use Bigperson\ModulposApiClient\Entity\Order;
-use Bigperson\ModulposApiClient\Entity\Cashier;
-use Bigperson\ModulposApiClient\Entity\OrderItem;
-use Bigperson\ModulposApiClient\Entity\PaymentItem;
+use Brandshopru\ModulposApiClient\Entity\Order;
+use Brandshopru\ModulposApiClient\Entity\Cashier;
+use Brandshopru\ModulposApiClient\Entity\OrderItem;
+use Brandshopru\ModulposApiClient\Entity\PaymentItem;
 
 $dateTime =  new \DateTime('NOW');
 // Создаем заказ
@@ -104,7 +99,7 @@ $cashier = Cashier::create([
 $login = 'test@test.ru'; // Логин полученный на первом шаге
 $password = 'password'; // Пароль полученный на первом шаге
 $testMode = true; // Тестовый режим
-$client = new \Bigperson\ModulposApiClient\Client($login, $password, $testMode);
+$client = new \Brandshopru\ModulposApiClient\Client($login, $password, $testMode);
 $responseUrl =  'https://internet.shop.ru/order/982340931/checkout?completed=1';
 $printReceipt = true; // Печатать ли чек на кассе
 $result = $client->sendCheck($order, $responseUrl, $printReceipt, $cashier);
@@ -121,7 +116,7 @@ $login = 'test@test.ru'; // Логин полученный на первом ш
 $password = 'password'; // Пароль полученный на первом шаге
 $testMode = true; // Тестовый режим
 $documentId = 'efbafcdd-113a-45db-8fb9-718b1fdc3524'; // id документа
-$client = new \Bigperson\ModulposApiClient\Client($login, $password, $testMode);
+$client = new \Brandshopru\ModulposApiClient\Client($login, $password, $testMode);
 $result = $client->getStatusDocumentById($documentId);
 ```
 В ответ придет массив со статусом `status`, который может принимать значения:
@@ -140,13 +135,13 @@ $result = $client->getStatusDocumentById($documentId);
 
 Кроме того вы можете вызвать отдельно метод проверки статуса фискального накопителя (сервиса фискализации):
 ```php
-$client = new \Bigperson\ModulposApiClient\Client($login, $password, $testMode);
+$client = new \Brandshopru\ModulposApiClient\Client($login, $password, $testMode);
 $result = $client->getStatusFiscalService();
 ```
 
 ## Развитие пакета
-С целью активного развития пакета, рекомендуем создавать пулл-реквесты, а не только баг-репорты ([issues](https://github.com/bigperson/modulpos-php-api-client/issues)). 
+С целью активного развития пакета, рекомендуем создавать пулл-реквесты, а не только баг-репорты ([issues](https://github.com/Brandshopru/modulpos-php-api-client/issues)). 
 По любым проблемам рекомендуем открывать Баг-репорты с подробным описанием проблемы и последовательностью действия для воспроизведения бага.
 
 ## Лицензия
-[MIT](https://raw.githubusercontent.com/bigperson/modulpos-php-api-client/master/LICENSE)
+[MIT](https://raw.githubusercontent.com/Brandshopru/modulpos-php-api-client/master/LICENSE)
