@@ -2,7 +2,7 @@
 /**
  * This file is part of Modulpos package.
  *
- * @author Anton Kartsev <anton@alarmcrm.ru>
+ *
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Tests\Order;
 
-use Bigperson\ModulposApiClient\Entity\PaymentItem;
-use Bigperson\ModulposApiClient\Exceptions\MethodNotFound;
-use Bigperson\ModulposApiClient\Exceptions\TypeOperationsNotAllowed;
+use Brandshopru\ModulposApiClient\Entity\PaymentItem;
+use Brandshopru\ModulposApiClient\Exceptions\MethodNotFound;
+use Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed;
 use Tests\TestCase;
 
 /**
