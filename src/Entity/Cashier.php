@@ -64,7 +64,7 @@ class Cashier extends AbstractEntity implements ModulposCashierInterface
     }
 
     /**
-     * @param null|string $name
+     * @param  null|string  $name
      *
      * @return $this
      */
@@ -76,7 +76,7 @@ class Cashier extends AbstractEntity implements ModulposCashierInterface
     }
 
     /**
-     * @param null|string $inn
+     * @param  null|string  $inn
      *
      * @return $this
      */

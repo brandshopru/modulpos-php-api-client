@@ -68,7 +68,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param string $documentUuid
+     * @param  string  $documentUuid
      */
     public function setDocumentUuid($documentUuid)
     {
@@ -84,7 +84,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param string $orderId
+     * @param  string  $orderId
      */
     public function setOrderId($orderId)
     {
@@ -100,7 +100,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param string $customerContact
+     * @param  string  $customerContact
      */
     public function setCustomerContact($customerContact)
     {
@@ -116,7 +116,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param string $typeOperation
+     * @param  string  $typeOperation
      *
      * @throws \Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed
      */
@@ -138,7 +138,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param OrderItem $item
+     * @param  OrderItem  $item
      */
     public function addItem(OrderItem $item)
     {
@@ -154,7 +154,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param PaymentItem $paymentItem
+     * @param  PaymentItem  $paymentItem
      */
     public function addPaymentItem($paymentItem)
     {
@@ -170,7 +170,7 @@ class Order extends AbstractEntity implements ModulposOrderInterface
     }
 
     /**
-     * @param string $checkoutDateTime
+     * @param  string  $checkoutDateTime
      */
     public function setCheckoutDateTime($checkoutDateTime)
     {

@@ -46,7 +46,7 @@ class PaymentItem extends AbstractEntity implements ModulposPaymentItemInterface
     }
 
     /**
-     * @param string $type
+     * @param  string  $type
      *
      * @throws \Brandshopru\ModulposApiClient\Exceptions\TypeOperationsNotAllowed
      */
@@ -68,7 +68,7 @@ class PaymentItem extends AbstractEntity implements ModulposPaymentItemInterface
     }
 
     /**
-     * @param float $sum
+     * @param  float  $sum
      */
     public function setSum($sum)
     {

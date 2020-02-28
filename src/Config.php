@@ -29,7 +29,7 @@ class Config
     /**
      * Возвращает базовый URL.
      *
-     * @param bool $testMode
+     * @param  bool  $testMode
      *
      * @return string
      */

@@ -25,7 +25,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
      * @var float
      */
     protected $discSum;
-    
+
     /**
      * @var float
      */
@@ -103,6 +103,11 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     ];
 
     /**
+     * @var string
+     */
+    protected $nomenclatureCode;
+
+    /**
      * @return float
      */
     public function getDiscSum()
@@ -111,7 +116,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     }
 
     /**
-     * @param float $discSum
+     * @param  float  $discSum
      */
     public function setDiscSum($discSum)
     {
@@ -127,7 +132,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     }
 
     /**
-     * @param float $price
+     * @param  float  $price
      */
     public function setPrice($price)
     {
@@ -143,7 +148,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     }
 
     /**
-     * @param int $quantity
+     * @param  int  $quantity
      */
     public function setQuantity($quantity)
     {
@@ -159,7 +164,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     }
 
     /**
-     * @param int $vatTag
+     * @param  int  $vatTag
      *
      * @throws \Brandshopru\ModulposApiClient\Exceptions\VatTagNotAllowed
      */
@@ -181,7 +186,7 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      */
     public function setName($name)
     {
@@ -230,5 +235,21 @@ class OrderItem extends AbstractEntity implements ModulposOrderItemInterface
         }
 
         $this->paymentMethod = $paymentMethod;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNomenclatureCode()
+    {
+        return $this->nomenclatureCode;
+    }
+
+    /**
+     * @param $nomenclatureCode
+     */
+    public function setNomenclatureCode($nomenclatureCode)
+    {
+        $this->nomenclatureCode = $nomenclatureCode;
     }
 }

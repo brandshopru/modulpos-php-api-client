@@ -25,10 +25,10 @@ use Brandshopru\ModulposApiClient\Exceptions\RequiredParameterNotFound;
 class CheckDataFactory
 {
     /**
-     * @param ModulposOrderInterface   $order
-     * @param null                     $responseUrl  URL для подтверждения успешной фискализации на стороне Интернет-магазина
-     * @param bool                     $printReceipt Печатать ли бумажный чек на кассе при фискализации
-     * @param ModulposCashierInterface $cashier      Информация о кассире
+     * @param  ModulposOrderInterface  $order
+     * @param  null  $responseUrl  URL для подтверждения успешной фискализации на стороне Интернет-магазина
+     * @param  bool  $printReceipt  Печатать ли бумажный чек на кассе при фискализации
+     * @param  ModulposCashierInterface  $cashier  Информация о кассире
      *
      * @return array
      */
@@ -41,13 +41,13 @@ class CheckDataFactory
         self::validate($order);
 
         $checkData = [
-            'id'               => $order->getDocumentUuid(),
+            'id' => $order->getDocumentUuid(),
             'checkoutDateTime' => $order->getCheckoutDateTime(),
-            'docNum'           => $order->getOrderId(),
-            'docType'          => $order->getTypeOperation(),
-            'printReceipt'     => $printReceipt,
-            'responseURL'      => $responseUrl,
-            'email'            => $order->getCustomerContact(),
+            'docNum' => $order->getOrderId(),
+            'docType' => $order->getTypeOperation(),
+            'printReceipt' => $printReceipt,
+            'responseURL' => $responseUrl,
+            'email' => $order->getCustomerContact(),
         ];
 
         if ($cashier) {
@@ -59,14 +59,19 @@ class CheckDataFactory
         foreach ($order->getItems() as $item) {
             /** @var \Brandshopru\ModulposApiClient\Contracts\ModulposOrderItemInterface $item */
             $itemData = [
-                'name'            => $item->getName(),
-                'price'           => $item->getPrice(),
-                'quantity'        => $item->getQuantity(),
-                'vatTag'          => $item->getVatTag(),
-                'paymentObject'   => $item->getPaymentObject(),
-                'paymentMethod'   => $item->getPaymentMethod(),
+                'name' => $item->getName(),
+                'price' => $item->getPrice(),
+                'quantity' => $item->getQuantity(),
+                'vatTag' => $item->getVatTag(),
+                'paymentObject' => $item->getPaymentObject(),
+                'paymentMethod' => $item->getPaymentMethod(),
             ];
-            if ($item->getDisc() !== false) $itemData['discSum'] = $item->getDisc();
+            if ($item->getDisc() !== false) {
+                $itemData['discSum'] = $item->getDisc();
+            }
+            if ($item->getNomenclatureCode() !== false) {
+                $itemData['nomenclatureCode'] = $item->getNomenclatureCode();
+            }
             $checkData['inventPositions'][] = $itemData;
         }
 
@@ -74,7 +79,7 @@ class CheckDataFactory
             /** @var \Brandshopru\ModulposApiClient\Contracts\ModulposPaymentItemInterface $paymentItem */
             $paymentItemData = [
                 'paymentType' => $paymentItem->getType(),
-                'sum'         => $paymentItem->getSum(),
+                'sum' => $paymentItem->getSum(),
             ];
 
             $checkData['moneyPositions'][] = $paymentItemData;
@@ -84,7 +89,7 @@ class CheckDataFactory
     }
 
     /**
-     * @param \Brandshopru\ModulposApiClient\Contracts\ModulposOrderInterface $order
+     * @param  \Brandshopru\ModulposApiClient\Contracts\ModulposOrderInterface  $order
      *
      * @throws \Brandshopru\ModulposApiClient\Exceptions\ItemsNotFound
      * @throws \Brandshopru\ModulposApiClient\Exceptions\RequiredParameterNotFound

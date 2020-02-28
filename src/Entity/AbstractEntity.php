@@ -19,11 +19,11 @@ use Brandshopru\ModulposApiClient\Exceptions\MethodNotFound;
 abstract class AbstractEntity
 {
     /**
-     * @param array $params
-     *
-     * @throws \Brandshopru\ModulposApiClient\Exceptions\MethodNotFound
+     * @param  array  $params
      *
      * @return static
+     * @throws \Brandshopru\ModulposApiClient\Exceptions\MethodNotFound
+     *
      */
     public static function create(array $params)
     {

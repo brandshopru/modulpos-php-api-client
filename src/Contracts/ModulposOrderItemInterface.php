@@ -68,4 +68,12 @@ interface ModulposOrderItemInterface
      * @return string
      */
     public function getPaymentMethod();
+
+    /**
+     * Код товара (тэг 1162) в шестнадцатеричном
+     * представлении с пробелами.
+     *
+     * @return string
+     */
+    public function getNomenclatureCode();
 }

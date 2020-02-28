@@ -28,7 +28,7 @@ interface ClientInterface
      *
      * @see      http://modulkassa.ru/upload/medialibrary/abb/api-avtomaticheskoy-fiskalizatsii-chekov-internet_magazinov-_ver.1.2_.pdf
      *
-     * @param ModulposOrderInterface $order
+     * @param  ModulposOrderInterface  $order
      *
      * @return array
      */
