@@ -76,4 +76,11 @@ interface ModulposOrderItemInterface
      * @return string
      */
     public function getNomenclatureCode();
+
+    /**
+     * Сумма скидки, примененной на позицию
+     *
+     * @return mixed
+     */
+    public function getDiscSum();
 }
